@@ -38,10 +38,7 @@ class ParsedInput(private val input: List<String>) {
     }
 
     fun stacks(): MutableList<Stack> {
-        val iterator = input.listIterator()
-        for (i in 1..splitLine) { // set iterator to first lane with crates
-            iterator.next()
-        }
+        val iterator = input.listIterator(splitLine)
         val numberOfStacks = iterator.previous().split("   ").size
         val containers: MutableList<Stack> = mutableListOf()
         for (i in 1..numberOfStacks) {
